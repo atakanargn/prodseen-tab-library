@@ -45,3 +45,13 @@ You can switch to the tab with the desired ID using the .change("tab-id") method
 ```js
 tabs.change("tab3");
 ```
+
+# About me
+Atakan Argın, 25 y-old, Fullstack Developer.
+
+|              |                                      |
+|--------------|--------------------------------------|
+| Github       | [@atakanargn](https://github.com/atakanargn)      |
+| LinkedIn     | [@atakanargn](https://linkedin.com/in/atakanargn)   |
+| E-mail       | [argin.atakan@gmail.com](mailto:argin.atakan@gmail.com) |
+| CV           | [cv.argin.info](https://cv.argin.info/)            |
