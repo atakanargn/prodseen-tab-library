@@ -13,8 +13,19 @@ Planned features to be added:
 
 # Usage
 
-**prs-tab.js** kütüphanesini HTML sayfanızın içerisine ekleyin.
+Include the <b>prs-tab.js</b> library into your HTML page.
 
 ```html
 <script src="prs-tab.js"></script>
 
+Create your tab structure with HTML codes as shown below, the number of tabs can be decreased or increased.
+
+```html
+&lt;ul class="prs-tab"&gt;
+        &lt;li to="tab1"&gt;Tab 1&lt;/li&gt;
+        &lt;li to="tab2"&gt;Tab 2&lt;/li&gt;
+        &lt;li to="tab3"&gt;Tab 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="prs-tabs" id="tab1"&gt;Tab 1 content&lt;/div&gt;
+&lt;div class="prs-tabs" id="tab2"&gt;Tab 2 content&lt;/div&gt;
+&lt;div class="prs-tabs" id="tab3"&gt;Tab 3 content&lt;/div&gt;
