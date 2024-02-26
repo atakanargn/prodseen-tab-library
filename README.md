@@ -1,4 +1,4 @@
-# pure-js-tab-lib
+# prodseen-tab-library
 Simple tab library with pure javascript
 
 # What is this?
