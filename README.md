@@ -1,7 +1,7 @@
 # prodseen-tab-library
 Simple tab library with pure javascript
 
-DEMO : [https://atakanargn.github.io/prodseen-tab-library/](https://github.com/atakanargn)
+DEMO : [https://atakanargn.github.io/prodseen-tab-library/](https://atakanargn.github.io/prodseen-tab-library/)
 
 # What is this?
 
