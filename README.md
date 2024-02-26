@@ -49,7 +49,6 @@ tabs.change("tab3");
 # About me
 Atakan Argın, 25 y-old, Fullstack Developer.
 
-|              |                                      |
 |--------------|--------------------------------------|
 | Github       | [@atakanargn](https://github.com/atakanargn)      |
 | LinkedIn     | [@atakanargn](https://linkedin.com/in/atakanargn)   |
