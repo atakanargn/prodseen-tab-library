@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="Atakan Argın" />
+    <title>Prodseen Tab Library v0.0.1</title>
+    <meta
+      name="description"
+      content="Prodseen Tab Library, this is pure javascript tab library."
+    />
+    <meta
+      name="keywords"
+      content="tab, tabs, html tab, html tabs, js tab, js tabs, javscript tab, pure javascript tab, tab library, purejs tab library, pure js tab library, github tab library"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Prodseen Tab Library" />
+    <meta property="og:description" content="Açıklama" />
+    <meta property="og:image" content="https://www.example.com/image.jpg" />
+    <meta name="theme-color" content="#FFF" />
+    
+    <style>
+      * {
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      textarea {
+        resize: none;
+        max-width: 99%;
+        min-width: 99%;
+        width: 99%;
+        cursor: pointer;
+      }
+
+      td{
+        font-weight: bolder;
+      }
+    </style>
+
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <ul class="prs-tab">
+      <li to="tab1">What is this?</li>
+      <li to="tab2">Usage</li>
+      <li to="tab3">About me</li>
+    </ul>
+    <div class="prs-tabs" id="tab1">
+      <h1>What is this?</h1>
+      Prodseen Tab library is a tab library written in pure JavaScript.
+
+      <p>Planned features to be added:</p>
+      <ul>
+        <li>More styles and style customization.</li>
+        <li>Conversion of tab based on id and class with querySelector().</li>
+        <li>Efforts will be made to make it as easy to use as possible.</li>
+        <li>Sidebar styled vertical tab menu.</li>
+      </ul>
+    </div>
+    <div class="prs-tabs" id="tab2">
+      <h1>Usage</h1>
+      <p>Include the <b>prs-tab.js</b> library into your HTML page.</p>
+
+      <textarea rows="1" readonly>
+&lt;script src="prs-tab.js"&gt;&lt;/script&gt;</textarea
+      >
+
+      <p>
+        Create your tab structure with HTML codes as shown below, the number of tabs can be decreased or increased.
+      </p>
+
+      <textarea rows="8" readonly>
+&lt;ul class="prs-tab"&gt;
+        &lt;li to="tab1"&gt;Tab 1&lt;/li&gt;
+        &lt;li to="tab2"&gt;Tab 2&lt;/li&gt;
+        &lt;li to="tab3"&gt;Tab 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="prs-tabs" id="tab1"&gt;Tab 1 content&lt;/div&gt;
+&lt;div class="prs-tabs" id="tab2"&gt;Tab 2 content&lt;/div&gt;
+&lt;div class="prs-tabs" id="tab3"&gt;Tab 3 content&lt;/div&gt;</textarea
+      >
+
+      <p>
+        After calling the ProdseenTab() class, the areas with the "ul" tag having the "prs-tab" class on your page will turn into selectable tabs, while the "div" tags with the "prs-tabs" attribute will represent the tab contents.
+      </p>
+
+      <textarea rows="5" readonly>
+&lt;script&gt;
+        var tabs;
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+        tabs = new ProdseenTab();
+};
+&lt;/script&gt;</textarea
+      >
+
+      <p>
+        You can switch to the tab with the desired ID using the .change("tab-id") method.
+      </p>
+
+      <textarea rows="1" readonly>tabs.change("tab3");</textarea>
+    </div>
+
+    <div class="prs-tabs" id="tab3">
+        <h1>About me</h1>
+        <p>Atakan Argın, 25 y-old, Fullstack Developer.</p>
+        <h2>Contact with me!</h2>
+        <table>
+            <tr>
+                <td>
+                    Github
+                </td>
+                <td>
+                    <a href="https://github.com/atakanargn" target="_blank">@atakanargn</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    LinkedIn
+                </td>
+                <td>
+                    <a href="https://linkedin.com/in/atakanargn" target="_blank">@atakanargn</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    E-mail
+                </td>
+                <td>
+                    <a href="mailto:argin.atakan@gmail.com" target="_blank">argin.atakan@gmail.com</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    CV
+                </td>
+                <td>
+                    <a href="https://cv.argin.info/" target="_blank">cv.argin.info</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/prs-tab.min.js"></script>
+    <script>
+      var tabs;
+      document.addEventListener("DOMContentLoaded", () => {
+        tabs = new ProdseenTab();
+
+        let textareas = Array.from(document.getElementsByTagName("textarea"));
+
+        textareas.forEach((element) => {
+          element.addEventListener("click", () => {
+            copyToClipboard(element);
+          });
+        });
+      });
+
+      function copyToClipboard(elem) {
+        elem.focus();
+        elem.select();
+        document.execCommand("copy");
+        let temp_val = elem.value;
+
+        elem.style.backgroundColor = "#000";
+        elem.style.color = "#FFF";
+
+        elem.value = "Copied!";
+        setTimeout(() => {
+          elem.value = temp_val;
+          elem.style.backgroundColor = "#FFF";
+          elem.style.color = "#000";
+        }, 300);
+      }
+    </script>
+  </body>
+</html>
