@@ -29,3 +29,19 @@ Create your tab structure with HTML codes as shown below, the number of tabs can
 <div class="prs-tabs" id="tab2">Tab 2 content</div>
 <div class="prs-tabs" id="tab3">Tab 3 content</div>
 ```
+
+After calling the ProdseenTab() class, the areas with the "ul" tag having the "prs-tab" class on your page will turn into selectable tabs, while the "div" tags with the "prs-tabs" attribute will represent the tab contents.
+```html
+<script>
+        var tabs;
+document.addEventListener(&quot;DOMContentLoaded&quot;, () => {
+        tabs = new ProdseenTab();
+};
+</script>
+```
+
+You can switch to the tab with the desired ID using the .change("tab-id") method.
+
+```js
+tabs.change("tab3");
+```
