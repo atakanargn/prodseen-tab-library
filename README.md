@@ -36,7 +36,7 @@ After calling the ProdseenTab() class, the areas with the "ul" tag having the "p
 ```html
 <script>
         var tabs;
-document.addEventListener(&quot;DOMContentLoaded&quot;, () => {
+document.addEventListener("DOMContentLoaded", () => {
         tabs = new ProdseenTab();
 };
 </script>
